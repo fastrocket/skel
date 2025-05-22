@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FastAPI Skeleton</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <h1>FastAPI Skeleton</h1>
+            </div>
+            <div class="navbar-menu">
+                <div class="user-info">
+                    {% if user.picture %}
+                    <img src="{{ user.picture }}" alt="{{ user.name }}" class="avatar">
+                    {% endif %}
+                    <span>{{ user.name }}</span>
+                </div>
+                <a href="/auth/logout" class="btn btn-logout">Logout</a>
+            </div>
+        </nav>
+        
+        <div class="dashboard-content">
+            <div class="welcome-card">
+                <h2>Welcome, {{ user.name }}!</h2>
+                <p>You've successfully logged in using Google authentication.</p>
+                <div class="user-details">
+                    <p><strong>Email:</strong> {{ user.email }}</p>
+                    <p><strong>User ID:</strong> {{ user.id }}</p>
+                    <p><strong>Last Login:</strong> {{ user.last_login }}</p>
+                </div>
+            </div>
+            
+            <div class="info-card">
+                <h3>About This Skeleton</h3>
+                <p>This is a minimal FastAPI application with:</p>
+                <ul>
+                    <li>Google OAuth Authentication</li>
+                    <li>DynamoDB User Storage</li>
+                    <li>JWT Token-based Session Management</li>
+                    <li>Responsive Design</li>
+                </ul>
+                <p>Use this as a starting point for your own applications!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
