@@ -61,7 +61,7 @@ pip install -r requirements.txt
 4. Click "Create Credentials" > "OAuth client ID"
 5. Set up the OAuth consent screen if prompted
 6. Select "Web application" as the application type
-7. Add "http://localhost:8000/auth/callback/google" as an authorized redirect URI
+7. Add "http://localhost:8000/auth" as an authorized redirect URI
 8. Note your Client ID and Client Secret
 
 ### 4. Set up DynamoDB
@@ -90,7 +90,6 @@ Create a `.env` file in the root directory with the following variables:
 DEBUG=True
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
-GOOGLE_REDIRECT_URI=http://localhost:8000/auth/callback/google
 SECRET_KEY=your_secret_key_change_in_production
 AWS_REGION=us-east-1
 AWS_ACCESS_KEY_ID=your_aws_access_key
